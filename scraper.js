@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-async function scrapeDataAndWriteToFile(url, outputFilePath) {
+async function scrapeData(url, outputFilePath) {
     try {
         // STEP 1: SCRAPE THE HOMEPAGE FOR AREAS
         // Fetch the HTML from the page
@@ -51,16 +51,16 @@ async function scrapeDataAndWriteToFile(url, outputFilePath) {
                             sectorPage(
                                 "h3:not(#comments):first-of-type + .object-list li a"
                             ).each((index, element) => {
-                                const problemName = sectorPage(element)
+                                // Raw title example: "3. Stina, 6B ⭐️⭐️ (📷)"
+                                const problemTitle = areaPage(element)
                                     .text()
-                                    .trim()
-                                    .split(", ")[0];
-                                const problemGrade = sectorPage(element)
-                                    .text()
-                                    .trim()
-                                    .split(", ")[1];
+                                    .trim();
+                                const problemName = problemTitle.split(", ")[0];
+                                const problemGrade = problemTitle
+                                    .split(", ")[1]
+                                    .split(" ")[0];
                                 const problemUrl =
-                                    sectorPage(element).attr("href");
+                                    areaPage(element).attr("href");
                                 problems.push({
                                     problemName,
                                     problemGrade,
@@ -89,8 +89,7 @@ async function scrapeDataAndWriteToFile(url, outputFilePath) {
                     areaPage(
                         "h3:not(#comments):first-of-type + .object-list li a"
                     ).each((index, element) => {
-                        // Title example: "3. Stina, 6B ⭐️⭐️ (📷)"
-                        // We need to trim and split it...
+                        // Raw title example: "3. Stina, 6B ⭐️⭐️ (📷)"
                         const problemTitle = areaPage(element).text().trim();
                         const problemName = problemTitle.split(", ")[0];
                         const problemGrade = problemTitle
@@ -137,4 +136,6 @@ async function scrapeDataAndWriteToFile(url, outputFilePath) {
 // Usage
 const url = "https://gbo.crimp.se";
 const outputFilePath = "./data/data.json";
-scrapeDataAndWriteToFile(url, outputFilePath);
+scrapeData(url, outputFilePath);
+
+module.exports = scrapeData;
