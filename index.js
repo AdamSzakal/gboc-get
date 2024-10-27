@@ -136,5 +136,5 @@ async function scrapeDataAndWriteToFile(url, outputFilePath) {
 
 // Usage
 const url = "https://gbo.crimp.se";
-const outputFilePath = "./areas.json";
+const outputFilePath = "./scraped_data.json";
 scrapeDataAndWriteToFile(url, outputFilePath);
