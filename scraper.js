@@ -30,7 +30,7 @@ async function scrapeData(url, outputFilePath) {
                 areaPage(".sectorlinkitem a").each((index, element) => {
                     const sectorName = areaPage(element).text().trim();
                     const sectorUrl = areaPage(element).attr("href");
-                    sectors.push({ sectorName, sectorUrl });
+                    sectors.push({ name: sectorName, url: sectorUrl });
                 });
 
                 if (sectors.length > 0) {
@@ -39,43 +39,67 @@ async function scrapeData(url, outputFilePath) {
 
                     for (const sector of sectors) {
                         try {
-                            const sectorResponse = await axios.get(
-                                sector.sectorUrl
-                            );
+                            const sectorResponse = await axios.get(sector.url);
                             const sectorPage = cheerio.load(
                                 sectorResponse.data
                             );
 
                             // Check for problems in the sector and add them to the sector object
                             const problems = [];
-                            sectorPage(
-                                "h3:not(#comments):first-of-type + .object-list li a"
-                            ).each((index, element) => {
-                                // Raw title example: "3. Stina, 6B ⭐️⭐️ (📷)"
-                                const problemTitle = areaPage(element)
-                                    .text()
-                                    .trim();
-                                const problemName = problemTitle.split(", ")[0];
-                                const problemGrade = problemTitle
-                                    .split(", ")[1]
-                                    .split(" ")[0];
-                                const problemUrl =
-                                    areaPage(element).attr("href");
-                                problems.push({
-                                    problemName,
-                                    problemGrade,
-                                    problemUrl,
-                                });
+                            sectorPage("h3").each((index, element) => {
+                                if (
+                                    sectorPage(element).text().trim() ===
+                                    "Problem"
+                                ) {
+                                    // Step 2: Select all adjacent .object-list li a elements
+                                    sectorPage(element)
+                                        .next(".object-list")
+                                        .find("li a")
+                                        .each((i, item) => {
+                                            // Raw title example: "3. Stina, 6B ⭐️⭐️ (📷)"
+                                            // We want name: Stina, grade: 6B, url: /problem/123
+                                            const problemTitle = areaPage(item)
+                                                .text()
+                                                .trim();
+                                            const problemName = problemTitle
+                                                .split(",")[0]
+                                                .replace(/\d+./g, "")
+                                                .trim();
+                                            // TODO: remove trailing dot from problem name
+                                            const problemGradeAndRating =
+                                                problemTitle.split(",")[1];
+                                            const problemGrade =
+                                                problemGradeAndRating
+                                                    .trim()
+                                                    .split(" ")[0];
+                                            const problemUrl =
+                                                areaPage(item).attr("href");
+                                            let problemRating = 0;
+                                            areaPage(item)
+                                                .find(".staricon")
+                                                .each((i, star) => {
+                                                    problemRating++;
+                                                });
+
+                                            // TODO: Scarpe problem details
+                                            // TODO: Scrape problem media (images, videos)
+                                            // Add the problem to the array
+                                            problems.push({
+                                                name: problemName,
+                                                grade: problemGrade,
+                                                url: problemUrl,
+                                                rating: problemRating,
+                                            });
+                                        });
+                                }
                             });
 
                             // Add problems if any are found in the sector
                             if (problems.length > 0) {
                                 sector.problems = problems;
+                            } else {
+                                sector.problems = [];
                             }
-
-                            console.log(
-                                `Checked ${sector.sectorName} for problems`
-                            );
                         } catch (error) {
                             console.error(
                                 `Error fetching ${sector.sectorUrl}:`,
@@ -85,35 +109,48 @@ async function scrapeData(url, outputFilePath) {
                     }
                 } else {
                     // Step 3b: If no sectors, add problems under a "main" sector
-                    const mainSector = { sectorName: "main", problems: [] };
-                    areaPage(
-                        "h3:not(#comments):first-of-type + .object-list li a"
-                    ).each((index, element) => {
-                        // Raw title example: "3. Stina, 6B ⭐️⭐️ (📷)"
-                        const problemTitle = areaPage(element).text().trim();
-                        const problemName = problemTitle.split(", ")[0];
-                        const problemGrade = problemTitle
-                            .split(", ")[1]
-                            .split(" ")[0];
-                        const problemUrl = areaPage(element).attr("href");
-                        mainSector.problems.push({
-                            problemName,
-                            problemGrade,
-                            problemUrl,
-                        });
+                    const mainSector = { name: "main", problems: [] };
+                    areaPage("h3").each((index, element) => {
+                        if (areaPage(element).text().trim() === "Problem") {
+                            // Step 2: Select all adjacent .object-list li a elements
+                            areaPage(element)
+                                .next(".object-list")
+                                .find("li a")
+                                .each((i, item) => {
+                                    // Raw title example: "3. Stina, 6B ⭐️⭐️ (📷)"
+                                    const problemTitle = areaPage(item)
+                                        .text()
+                                        .trim();
+                                    const problemName =
+                                        problemTitle.split(",")[0];
+                                    const problemGradeAndRating =
+                                        problemTitle.split(",")[1];
+                                    const problemGrade = problemGradeAndRating
+                                        .trim()
+                                        .split(" ")[0];
+                                    const problemUrl =
+                                        areaPage(item).attr("href");
+                                    let problemRating = 0;
+                                    areaPage(item)
+                                        .find(".staricon")
+                                        .each((i, star) => {
+                                            problemRating++;
+                                        });
+
+                                    // Add the problem to the array
+                                    mainSector.problems.push({
+                                        name: problemName,
+                                        grade: problemGrade,
+                                        url: problemUrl,
+                                        rating: problemRating,
+                                    });
+                                });
+                        }
                     });
 
                     // Add the "main" sector only if it has problems
-                    if (mainSector.problems.length > 0) {
-                        area.sectors = [mainSector];
-                    }
-
-                    console.log(
-                        `Listed problems for area ${area.name} under 'main' sector`
-                    );
+                    area.sectors = [mainSector];
                 }
-
-                console.log(`Checked ${area.name} for sectors`);
             } catch (error) {
                 console.error(`Error fetching ${area.url}:`, error);
             }
