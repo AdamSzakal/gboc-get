@@ -1,19 +1,36 @@
 
     <html>
       <head><title>Tosseryd</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://rsms.me/">
+      <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       <link rel="stylesheet" href="../styles.css">
       </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Tosseryd</h1>
-        <p>Litet område med mestadels lätta problem, ligger ganska öppet och torkar fort.</p>
-        <p><a href="http://maps.google.com/?q=57.756681,12.977515" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Tosseryd</a>
+            <a href="http://maps.google.com/?q=57.756681,12.977515" target="_blank">
+            <small class="coordinate">57.7567, 12.9775</small></a> 
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <p class="section">Litet område med mestadels lätta problem, ligger ganska öppet och torkar fort.</p>
         
-        <h2>Sectors</h2><ul><li><a href="Odleblocket/index.html">Ödleblocket</a></li></ul>
+        <h2 class="section-header">Sektorer</h2><ul><a href="Odleblocket/index.html">
+        <li class="list-item">
+            <span class="list-item-title">Ödleblocket</span>
+            <small class="list-item-meta">5 problem</small>
+        </li>
+    </a></ul>
         
         
-
-                
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3494.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3494.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3494.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

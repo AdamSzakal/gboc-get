@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>I am the walrus</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>I am the walrus</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>I am the walrus (7A+)</h1>
-        <p class="description">Startar brant (utan väggen till höger), hälkrokar till höger och vänster, tekniska finter och dribblingar upp till en lättare men läskig slab. Projekt nr 33 i den tryckta guiden.</p>
-        <p class="rating">Rating: ★★★</p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ I am the walrus</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Startar brant (utan väggen till höger), hälkrokar till höger och vänster, tekniska finter och dribblingar upp till en lättare men läskig slab. Projekt nr 33 i den tryckta guiden.</p>
+            <p>Grad: 7A+</p>
+            <p>Betyg: ★★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/510.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/510.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/510.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

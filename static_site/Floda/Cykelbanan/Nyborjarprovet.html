@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Nybörjarprovet</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Nybörjarprovet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Nybörjarprovet (4)</h1>
-        <p class="description">Rätt upp med tvärsprickor och lite fotarbete med valbar mantling, på slopers!</p>
-        <p class="rating">Rating: ★</p>
-        <p><a href="http://maps.google.com/?q=57.80953704726355,12.359533309936522" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Nybörjarprovet</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Rätt upp med tvärsprickor och lite fotarbete med valbar mantling, på slopers!</p>
+            <p>Grad: 4</p>
+            <p>Betyg: ★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2746.png"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2746.png" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2746.png'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

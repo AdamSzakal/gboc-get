@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Insanum esse me?</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Insanum esse me?</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Insanum esse me? (7B)</h1>
-        <p class="description">Hoppstart till hård mantling</p>
-        <p class="rating">Rating: ★★</p>
-        <p><a href="http://maps.google.com/?q=57.7468,12.1161" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Insanum esse me?</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Hoppstart till hård mantling</p>
+            <p>Grad: 7B</p>
+            <p>Betyg: ★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2253.JPG"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2253.JPG" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2253.JPG'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

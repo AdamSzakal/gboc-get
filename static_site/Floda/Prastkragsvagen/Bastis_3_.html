@@ -1,16 +1,39 @@
 
     <html>
-      <head><title>Bastis 3+</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Bastis 3+</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Bastis 3+ (6A)</h1>
-        <p class="description">Längst till höger på samma vägg som Yogahöfter framför trädet. Svårare om du är kort.</p>
-        <p class="rating">Rating: ★</p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Bastis 3+</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Längst till höger på samma vägg som Yogahöfter framför trädet. Svårare om du är kort.</p>
+            <p>Grad: 6A</p>
+            <p>Betyg: ★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2228.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2072.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2228.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2228.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2072.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2072.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a></section>
       </body>
     </html>

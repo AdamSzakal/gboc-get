@@ -1,20 +1,44 @@
 
     <html>
       <head><title>Derome</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://rsms.me/">
+      <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       <link rel="stylesheet" href="../styles.css">
       </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Derome</h1>
-        <p>Litet samhälle väster om Veddige, någon mil norr om Varberg.</p>
-        <p><a href="http://maps.google.com/?q=57.239794368397824,12.30769157409668" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Derome</a>
+            <a href="http://maps.google.com/?q=57.239794368397824,12.30769157409668" target="_blank">
+            <small class="coordinate">57.2398, 12.3077</small></a> 
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <p class="section">Litet samhälle väster om Veddige, någon mil norr om Varberg.</p>
         
-        <h2>Sectors</h2><ul><li><a href="Viskan/index.html">Viskan</a></li></ul>
+        <h2 class="section-header">Sektorer</h2><ul><a href="Viskan/index.html">
+        <li class="list-item">
+            <span class="list-item-title">Viskan</span>
+            <small class="list-item-meta">0 problem</small>
+        </li>
+    </a></ul>
         
         
-
-                
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2574.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2575.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2574.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2574.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2575.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2575.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a></section>
       </body>
     </html>

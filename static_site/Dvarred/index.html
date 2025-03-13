@@ -1,20 +1,44 @@
 
     <html>
       <head><title>Dvärred</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://rsms.me/">
+      <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       <link rel="stylesheet" href="../styles.css">
       </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Dvärred</h1>
-        <p>Litet ganska outforskat område som ligger i östra Kållered.</p>
-        <p><a href="http://maps.google.com/?q=57.60120926652166,12.102684974670412" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Dvärred</a>
+            <a href="http://maps.google.com/?q=57.60120926652166,12.102684974670412" target="_blank">
+            <small class="coordinate">57.6012, 12.1027</small></a> 
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <p class="section">Litet ganska outforskat område som ligger i östra Kållered.</p>
         
-        <h2>Sectors</h2><ul><li><a href="Norra_Hagen/index.html">Norra Hagen</a></li></ul>
+        <h2 class="section-header">Sektorer</h2><ul><a href="Norra_Hagen/index.html">
+        <li class="list-item">
+            <span class="list-item-title">Norra Hagen</span>
+            <small class="list-item-meta">3 problem</small>
+        </li>
+    </a></ul>
         
         
-
-                
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3341.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3342.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3341.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3341.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3342.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3342.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a></section>
       </body>
     </html>

@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Beach boys</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Beach boys</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Beach boys (6C+)</h1>
-        <p class="description">Sittstart nere till höger. Urtoppning vid jugg.</p>
-        <p class="rating">Rating: ★★★</p>
-        <p><a href="http://maps.google.com/?q=58.44288091308538,11.293982863467138" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Beach boys</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Sittstart nere till höger. Urtoppning vid jugg.</p>
+            <p>Grad: 6C+</p>
+            <p>Betyg: ★★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3600.JPG"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3600.JPG" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3600.JPG'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

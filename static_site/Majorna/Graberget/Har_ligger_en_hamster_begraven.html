@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Här ligger en hamster begraven</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Här ligger en hamster begraven</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Här ligger en hamster begraven (5-)</h1>
-        <p class="description">På gården till Slottskogsgatan 6 ligger denna vackra slabb. Undvik sprickan till vänster.</p>
-        <p class="rating">Rating: ★</p>
-        <p><a href="http://maps.google.com/?q=57.690553,11.917341" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Här ligger en hamster begraven</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>På gården till Slottskogsgatan 6 ligger denna vackra slabb. Undvik sprickan till vänster.</p>
+            <p>Grad: 5-</p>
+            <p>Betyg: ★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2991.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2991.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2991.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

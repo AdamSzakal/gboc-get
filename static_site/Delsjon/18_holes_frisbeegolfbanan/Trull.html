@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Trull</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Trull</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Trull (Projekt)</h1>
-        <p class="description">Inte så lång men endå rolig. ligger ännu ett snäpp åt höger från tripp och trapp. Gps 57 42 24 N, 12 1 59 E.</p>
-        <p class="rating">Rating: </p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Trull</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Inte så lång men endå rolig. ligger ännu ett snäpp åt höger från tripp och trapp. Gps 57 42 24 N, 12 1 59 E.</p>
+            <p>Grad: Projekt</p>
+            
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/1124.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/1124.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/1124.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

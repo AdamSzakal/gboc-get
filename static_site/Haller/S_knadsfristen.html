@@ -1,16 +1,39 @@
 
     <html>
-      <head><title>Søknadsfristen</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Søknadsfristen</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Søknadsfristen (7C+)</h1>
-        <p class="description">Hangelgrooven till vänster om Cuerpo de hombre. Sittstart till vänster och urtoppning på den mossiga slabben.</p>
-        <p class="rating">Rating: ★★★</p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Søknadsfristen</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Hangelgrooven till vänster om Cuerpo de hombre. Sittstart till vänster och urtoppning på den mossiga slabben.</p>
+            <p>Grad: 7C+</p>
+            <p>Betyg: ★★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/1596.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/866.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/1596.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/1596.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/866.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/866.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a></section>
       </body>
     </html>

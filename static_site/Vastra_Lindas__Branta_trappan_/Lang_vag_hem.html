@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Lång väg hem</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Lång väg hem</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Lång väg hem (4+)</h1>
-        <p class="description">Detta kan mycket väl vara klättrat redan. Bara släng / ändra det isåfall. En rund arete med sprickor på ena sidan. Fortsätt ca 100 meter från Gail devers. Man får gå upp lite i snåren för att komma dit.  Jag toppade ur åt vänster i sprickorna men man kan göra lite olika. Sittstart är också görbart (gissningsvis liknande grad). Nog inget man åker till men om man råkar vara där så varför inte.</p>
-        <p class="rating">Rating: </p>
-        <p><a href="https://maps.google.com/maps?q=57.565608,11.925187" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Lång väg hem</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Detta kan mycket väl vara klättrat redan. Bara släng / ändra det isåfall. En rund arete med sprickor på ena sidan. Fortsätt ca 100 meter från Gail devers. Man får gå upp lite i snåren för att komma dit.  Jag toppade ur åt vänster i sprickorna men man kan göra lite olika. Sittstart är också görbart (gissningsvis liknande grad). Nog inget man åker till men om man råkar vara där så varför inte.</p>
+            <p>Grad: 4+</p>
+            
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/1745.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/1745.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/1745.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

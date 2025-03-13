@@ -1,21 +1,50 @@
 
     <html>
       <head><title>Råda</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://rsms.me/">
+      <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       <link rel="stylesheet" href="../styles.css">
       </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Råda</h1>
-        <p>No description available.</p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Råda</a>
+            <a href="undefined" target="_blank">
+            <small class="coordinate">undefined</small></a> 
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <p class="section">Ingen beskrivningen tillgänglig.</p>
         
-        <h2>Sectors</h2><ul><li><a href="Hojden/index.html">Höjden</a></li>
-<li><a href="Saterivagen/index.html">Säterivägen</a></li></ul>
+        <h2 class="section-header">Sektorer</h2><ul><a href="Hojden/index.html">
+        <li class="list-item">
+            <span class="list-item-title">Höjden</span>
+            <small class="list-item-meta">1 problem</small>
+        </li>
+    </a>
+<a href="Saterivagen/index.html">
+        <li class="list-item">
+            <span class="list-item-title">Säterivägen</span>
+            <small class="list-item-meta">1 problem</small>
+        </li>
+    </a></ul>
         
         
-
-                
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2626.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2621.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2626.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2626.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2621.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2621.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a></section>
       </body>
     </html>

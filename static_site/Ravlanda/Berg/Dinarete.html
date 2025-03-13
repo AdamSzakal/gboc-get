@@ -1,17 +1,47 @@
 
     <html>
-      <head><title>Dinarete</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Dinarete</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Dinarete (Projekt)</h1>
-        <p class="description">En ståtlig arete höst upp på berget. Gå till toppen på berget. När man står längs ut på topplatån har man linjen strax nedanför sig. Graden är gissningsvis 7b eller uppåt.</p>
-        <p class="rating">Rating: ★★</p>
-        <p><a href="http://maps.google.com/?q=57.65910045270156,12.520422935485838" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Dinarete</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>En ståtlig arete höst upp på berget. Gå till toppen på berget. När man står längs ut på topplatån har man linjen strax nedanför sig. Graden är gissningsvis 7b eller uppåt.</p>
+            <p>Grad: Projekt</p>
+            <p>Betyg: ★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2148.JPG">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2147.JPG">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2146.JPG"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2148.JPG" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2148.JPG'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2147.JPG" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2147.JPG'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2146.JPG" 
+        target="_blank"
+        title="Image 3"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2146.JPG'); background-size: cover;">
+            <div class="image-index">3</div>
+        </a></section>
       </body>
     </html>

@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Bergskåseri</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Bergskåseri</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Bergskåseri (4)</h1>
-        <p class="description">Problemet är belägen mitt emot White Russian. Rakt upp på väggen via ett flak och sidorailet. Fint problem passande för nybörjare.  OBS! Flaket känns något osolidt så ta det försiktigt.</p>
-        <p class="rating">Rating: </p>
-        <p><a href="http://maps.google.com/?q=57.742842648815866,12.06751585006714" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Bergskåseri</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Problemet är belägen mitt emot White Russian. Rakt upp på väggen via ett flak och sidorailet. Fint problem passande för nybörjare.  OBS! Flaket känns något osolidt så ta det försiktigt.</p>
+            <p>Grad: 4</p>
+            
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3213.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3213.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3213.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

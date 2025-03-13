@@ -1,17 +1,47 @@
 
     <html>
-      <head><title>Znauzer</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Znauzer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Znauzer (7B)</h1>
-        <p class="description">Problemet ligger upp i backen på höger sida efter att grusvägen har svängt av vänster. Fortsätt ut på åkern I ungefär 50 meter. Titta sedan upp höger. Koordinaterna stämmer inte riktigt. Bara en fingervisning.</p>
-        <p class="rating">Rating: ★★★</p>
-        <p><a href="http://maps.google.com/?q=58.550615456282486,11.326233008094277" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Znauzer</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Problemet ligger upp i backen på höger sida efter att grusvägen har svängt av vänster. Fortsätt ut på åkern I ungefär 50 meter. Titta sedan upp höger. Koordinaterna stämmer inte riktigt. Bara en fingervisning.</p>
+            <p>Grad: 7B</p>
+            <p>Betyg: ★★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3182.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3183.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/3184.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3182.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3182.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3183.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3183.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/3184.jpg" 
+        target="_blank"
+        title="Image 3"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/3184.jpg'); background-size: cover;">
+            <div class="image-index">3</div>
+        </a></section>
       </body>
     </html>

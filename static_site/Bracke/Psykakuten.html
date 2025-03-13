@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Psykakuten</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Psykakuten</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Psykakuten (6A)</h1>
-        <p class="description">Följ grusvägen upp en bit i skogen så ser du snart en stor vägg på vänster sida. Psykakuten startar mitt på den på sluttande krimpar och följer en uppenbar linje svagt åt höger och toppar vid det stora juggiga greppet. Den är ganska hög och landningen är en ca 0.5 meter djup sluttande mossklack följt av drop och ojämn sluttning. Slabbig och vacker med fina solida grepp hela vägen!</p>
-        <p class="rating">Rating: ★★</p>
-        <p><a href="http://maps.google.com/?q=57.7112603476806,11.875829100608826" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Psykakuten</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Följ grusvägen upp en bit i skogen så ser du snart en stor vägg på vänster sida. Psykakuten startar mitt på den på sluttande krimpar och följer en uppenbar linje svagt åt höger och toppar vid det stora juggiga greppet. Den är ganska hög och landningen är en ca 0.5 meter djup sluttande mossklack följt av drop och ojämn sluttning. Slabbig och vacker med fina solida grepp hela vägen!</p>
+            <p>Grad: 6A</p>
+            <p>Betyg: ★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2875.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2875.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2875.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

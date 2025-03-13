@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Rosetta Stone</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Rosetta Stone</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Rosetta Stone (6B)</h1>
-        <p class="description">Problemet startar bakom "graffitiblocket" vid stenen som lutar mot blocket. Man börjar sittandes på vänster sida om areten med jugg och areten, rakt upp. Man har en sten i ryggen, även det här problemet kan upplevas som krystat.</p>
-        <p class="rating">Rating: ★</p>
-        <p><a href="http://maps.google.com/?q=57.72578601567494,12.048826217651367" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Rosetta Stone</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Problemet startar bakom "graffitiblocket" vid stenen som lutar mot blocket. Man börjar sittandes på vänster sida om areten med jugg och areten, rakt upp. Man har en sten i ryggen, även det här problemet kan upplevas som krystat.</p>
+            <p>Grad: 6B</p>
+            <p>Betyg: ★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2382.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2382.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2382.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>

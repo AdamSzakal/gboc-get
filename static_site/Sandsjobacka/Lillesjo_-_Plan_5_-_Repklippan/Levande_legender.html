@@ -1,16 +1,39 @@
 
     <html>
-      <head><title>Levande legender</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Levande legender</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Levande legender (6B+)</h1>
-        <p class="description">Problemet ligger på repklippan vid stora blocket. Från det lilla taket, gå upp till jugen mitt på väggen. På med röntgenglasögonen och försök se toppgreppen.</p>
-        <p class="rating">Rating: ★★★</p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Levande legender</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Problemet ligger på repklippan vid stora blocket. Från det lilla taket, gå upp till jugen mitt på väggen. På med röntgenglasögonen och försök se toppgreppen.</p>
+            <p>Grad: 6B+</p>
+            <p>Betyg: ★★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/2233.PNG">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/786.JPG"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/2233.PNG" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/2233.PNG'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/786.JPG" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/786.JPG'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a></section>
       </body>
     </html>

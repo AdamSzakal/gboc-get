@@ -1,17 +1,47 @@
 
     <html>
-      <head><title>My little yellow friend</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>My little yellow friend</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>My little yellow friend (6B+)</h1>
-        <p class="description">Start rätt upp på den lilla väggen. Avslutning snett upp åt vänster. Ett av de finare problemen på öarna. Klarades första gången en kall solig januaridag. Ofta en mindre pöl rakt under den (pölen var frusen i januari). Står som "Anders problem" i den gamla föraren</p>
-        <p class="rating">Rating: ★★</p>
-        <p><a href="undefined" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ My little yellow friend</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Start rätt upp på den lilla väggen. Avslutning snett upp åt vänster. Ett av de finare problemen på öarna. Klarades första gången en kall solig januaridag. Ofta en mindre pöl rakt under den (pölen var frusen i januari). Står som "Anders problem" i den gamla föraren</p>
+            <p>Grad: 6B+</p>
+            <p>Betyg: ★★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/626.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/164.jpg">
-<img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/165.JPG"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/626.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/626.jpg'); background-size: cover;">
+            
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/164.jpg" 
+        target="_blank"
+        title="Image 2"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/164.jpg'); background-size: cover;">
+            <div class="image-index">2</div>
+        </a>
+<a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/165.JPG" 
+        target="_blank"
+        title="Image 3"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/165.JPG'); background-size: cover;">
+            <div class="image-index">3</div>
+        </a></section>
       </body>
     </html>

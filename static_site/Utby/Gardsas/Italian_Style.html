@@ -1,15 +1,31 @@
 
     <html>
-      <head><title>Italian Style</title></head>
-      <link rel="stylesheet" href="../../styles.css">
-      <link rel="stylesheet" href="../styles.css">
+      <head>
+        <title>Italian Style</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../styles.css">
+      </head>
       <body>
-        <a href="../index.html" style="display:block; margin-bottom:10px;">⬅ Back</a>
-        <h1>Italian Style (6A+)</h1>
-        <p class="description">Problemet ligger 20 meter bakom Sockerbitsareten. Startar på läppen det  lilla överhängande taket. Toppa ur rakt upp. Är du kort kan du börja hängandes i starten. Mellan sockerbiten och minikylskåpet</p>
-        <p class="rating">Rating: ★</p>
-        <p><a href="http://maps.google.com/?q=57.7492731,12.0545989" target="_blank">View on Google Maps</a></p>
+        <header>
+            <a class="back-button" href="../index.html">‹ Italian Style</a>
+        </header>
+        <h2 class="section-header">Beskrivning</h2>
+        <div class="section">
+            <p>Problemet ligger 20 meter bakom Sockerbitsareten. Startar på läppen det  lilla överhängande taket. Toppa ur rakt upp. Är du kort kan du börja hängandes i starten. Mellan sockerbiten och minikylskåpet</p>
+            <p>Grad: 6A+</p>
+            <p>Betyg: ★</p>
+        </div>
+        // TODO: Get coordinates to problem object
         
-        <h2>Images</h2><section class="gallery"><img class="image" src="https://gbo.crimp.se/gbo2k/gbo_images/1497.jpg"></section>
+        <h2 class="section-header">Kartor och bilder</h2><section class="gallery"><a 
+        class="image-wrapper"
+        href="https://gbo.crimp.se/gbo2k/gbo_images/1497.jpg" 
+        target="_blank"
+        title="Image 1"
+        style="background-image: url('https://gbo.crimp.se/gbo2k/gbo_images/1497.jpg'); background-size: cover;">
+            
+        </a></section>
       </body>
     </html>
