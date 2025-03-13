@@ -1,14 +1,14 @@
-const scrapeData = require("./scraper");
+const main = require("./scraper");
 const generateHtml = require("./htmlGenerator");
 const fs = require("fs").promises;
 const path = require("path");
 
 async function run() {
     // Step 1: Run scrapeData and wait for it to complete
-    await scrapeData();
+    await main;
 
     // Step 2: Check if the JSON file was created
-    const jsonFilePath = path.join(__dirname, "data", "data.json");
+    const jsonFilePath = path.join(__dirname, "data", "output.json");
     try {
         await fs.access(jsonFilePath); // This will throw an error if the file does not exist
 

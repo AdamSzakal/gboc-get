@@ -7,13 +7,74 @@ async function loadJsonData(jsonFilePath) {
     return JSON.parse(data);
 }
 
+const header = `<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        line-height: 130%;
+        padding: 8px 32px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        max-width: 30em;
+        gap: 16px;
+        padding: 16px 0;
+        min-height: 100%;
+    }
+    a, a:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+    .list-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .list-item:hover {
+        text-decoration: underline;
+    }
+    .metadata-wrapper {
+        display: flex;
+        gap: 4px;
+    }
+    .metadata {
+        font-size: 14px;
+        opacity: .5;
+    }
+    .rating {
+        color: orangered;
+    }
+    .list-item a, .list-item p {
+        margin: 0;
+    }
+
+    footer {
+        margin-top: 32px;
+        font-size: 14px;
+        color: orangered;
+    }
+
+
+</style>
+<body>`;
+
+const footer = `</body></html>`;
+
 // Create directories for each area, sector, and problem
 async function createHtmlFiles(areas, outputDir) {
     // Ensure the output directory exists
     await fs.mkdir(outputDir, { recursive: true });
 
     // Step 1: Create Homepage listing all areas
-    let homepageContent = `<h1>Areas</h1><ul>`;
+    let homepageContent = `${header} <h1>Areas</h1><main>`;
     for (const area of areas) {
         const areaFileName = `${area.name
             .replace("ö", "o")
@@ -29,11 +90,20 @@ async function createHtmlFiles(areas, outputDir) {
         const areaDir = path.join(outputDir, areaFileName);
         await fs.mkdir(areaDir, { recursive: true });
 
-        // Link to each area's page
-        homepageContent += `<li><a href="./${areaFileName}/index.html">${area.name}</a></li>`;
+        const sectorCount = area.sectors.length;
+        const areaListItem = `<a class="list-item" href="./${areaFileName}/index.html">
+                <p class="list-title">${area.name}</p>
+                <p class="metadata">${sectorCount} sektorer</p>
+            </a>`;
+
+        // Create area list item
+        homepageContent += areaListItem;
 
         // Step 2: Create area page listing all sectors
-        let areaContent = `<h1>${area.name}</h1><ul>`;
+        let areaContent = `${header}
+            <a class="metadata" href="../index.html">← Alla områden</a>
+            <h1>${area.name}</h1>
+            <main>`;
         for (const sector of area.sectors) {
             const sectorFileName = `${sector.name
                 .replace("ö", "o")
@@ -49,14 +119,22 @@ async function createHtmlFiles(areas, outputDir) {
             const sectorDir = path.join(areaDir, sectorFileName);
             await fs.mkdir(sectorDir, { recursive: true });
 
-            // Link to each sector's page
-            areaContent += `<li><a href="./${sectorFileName}/index.html">${sector.name}</a></li>`;
+            const problemCount = sector.problems.length;
+
+            // Create sector list item
+            const sectorListItem = `<a class="list-item" href="./${sectorFileName}/index.html">
+                    <p class="list-title">${sector.name}</p>
+                    <p class="metadata">${problemCount} problem</p>
+                </a>`;
+
+            areaContent += sectorListItem;
 
             // Step 3: Create sector page listing all problems
-            let sectorContent = `<h1>${sector.name}</h1><ul>`;
+            let sectorContent = `${header}
+                <a class="metadata" href="../index.html">← Alla sektorer</a>
+                <h1>${sector.name}</h1>
+                <main>`;
             for (const problem of sector.problems) {
-                // Use a unique file name for each problem page
-                // Check for whitespaces, slashes, dashes, etc. in the problem name
                 const problemFileName = `${problem.name
                     .replace("ö", "o")
                     .replace("ä", "a")
@@ -69,8 +147,30 @@ async function createHtmlFiles(areas, outputDir) {
                     .replace(/\W+/g, "-")
                     .toLowerCase()}.html`;
 
+                const starRating = function getRating(rating) {
+                    if (rating === 0) {
+                        return "";
+                    } else if (rating === 1) {
+                        return "●";
+                    } else if (rating === 2) {
+                        return "●●";
+                    } else if (rating === 3) {
+                        return "●●●";
+                    } else {
+                        return "";
+                    }
+                };
+
+                const problemListItem = `<a class="list-item" href="./${problemFileName}/index.html">
+                    <p class="list-title">${problem.name}</p>
+                    <div class="metadata-wrapper">
+                        <p class="metadata">${problem.grade}</p>
+                        <p class="rating">${starRating(problem.rating)}</span>
+                    </div>
+                    </a>`;
+
                 // Link to each problem's page
-                sectorContent += `<li><a href="./${problemFileName}">${problem.name}</a></li>`;
+                sectorContent += problemListItem;
 
                 // Step 4: Create problem page with the problem name
                 const problemContent = `<h1>${problem.name}</h1><p>Details about ${problem.name}.</p>`;
@@ -80,7 +180,11 @@ async function createHtmlFiles(areas, outputDir) {
                     "utf8"
                 );
             }
-            sectorContent += "</ul>";
+
+            // Close sector listing
+            sectorContent += `</main> ${footer}`;
+            // Add source URL
+            sectorContent += `<footer>Källa: <a href="${sector.url}">${sector.name}</a></footer>`;
 
             // Write sector page
             await fs.writeFile(
@@ -89,7 +193,11 @@ async function createHtmlFiles(areas, outputDir) {
                 "utf8"
             );
         }
-        areaContent += "</ul>";
+
+        // Close area lising
+        areaContent += `</main> ${footer}`;
+        // Add source URL
+        areaContent += `<footer>Source: <a href="${area.url}">${area.name}</a></footer>`;
 
         // Write area page
         await fs.writeFile(
@@ -98,7 +206,9 @@ async function createHtmlFiles(areas, outputDir) {
             "utf8"
         );
     }
-    homepageContent += "</ul>";
+
+    // Close homepage listing
+    homepageContent += "</main>";
 
     // Write homepage
     await fs.writeFile(
@@ -110,7 +220,7 @@ async function createHtmlFiles(areas, outputDir) {
 
 // Main function to run the script
 async function generateHtmlFromJson() {
-    const jsonFilePath = "./data/data.json";
+    const jsonFilePath = "./data/output.json";
     const outputDir = "./site";
 
     try {

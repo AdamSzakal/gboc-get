@@ -1,3 +1,4 @@
-data/
-site/
+./data/
+./site/
+./node_modules/
 .DS_Store
