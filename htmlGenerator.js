@@ -269,7 +269,11 @@ function problemTemplate(parentPath, problem) {
                     : ""
             }
         </div>
-        // TODO: Get coordinates to problem object
+        // TODO: Koordinater -> problem-objektet
+        // TODO: Länka till GBO page
+        // TODO: FA
+        // TODO: Landning
+        // TODO: Sittstart
         
         ${gallery(problem.images)}
       </body>
