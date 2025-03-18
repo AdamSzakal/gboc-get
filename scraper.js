@@ -57,16 +57,16 @@ async function scrapeAreaPage(area) {
         // Extract sector links from the area page
         let sectors = [];
         $(".sectorlinkitem > a").each((i, elem) => {
-            if (i < 10) {
-                let sectorUrl = $(elem).attr("href");
-                if (sectorUrl) {
-                    if (!sectorUrl.startsWith("http")) {
-                        sectorUrl = new URL(sectorUrl, area.url).href; // More reliable URL building
-                    }
+            // if (i < 10) {
+            let sectorUrl = $(elem).attr("href");
+            if (sectorUrl) {
+                if (!sectorUrl.startsWith("http")) {
+                    sectorUrl = new URL(sectorUrl, area.url).href; // More reliable URL building
                 }
-                const sectorName = $(elem).text().trim().split("\n")[0];
-                sectors.push({ name: sectorName, url: sectorUrl });
             }
+            const sectorName = $(elem).text().trim().split("\n")[0];
+            sectors.push({ name: sectorName, url: sectorUrl });
+            // }
         });
         area.sectors = sectors;
 
@@ -86,45 +86,10 @@ async function scrapeAreaPage(area) {
                         }
                         const titleText = $(elem).text().trim();
                         const name = titleText.split(", ")[0];
-                        // const grade = titleText.split(", ")[1].split(" ")[0];
-                        // const rating = $("h2 i.staricon").length;
-                        // const description = $("div.description > p")
-                        //     .text()
-                        //     .replace(/\n+/g, " ") // Replace multiple newlines with a single one
-                        //     .trim();
-                        // const coordinate = $('a[href*="maps.google.com"]')
-                        //     .text()
-                        //     .split(": ")[1];
-                        // const mapsLink = $('a[href*="maps.google.com"]').attr(
-                        //     "href"
-                        // );
-                        // const landing = $('ul.nav-list li:contains("Landning")')
-                        //     .text()
-                        //     .split(": ")[1];
-                        // const sitStart = $(
-                        //     'ul.nav-list li:contains("Sittstart")'
-                        // )
-                        //     .text()
-                        //     .split(": ")[1];
-
-                        // // Extract images
-                        // let images = [];
-                        // $("a.thumbnail").each((i, elem) => {
-                        //     let imageURL = $(elem).attr("href");
-                        //     images.push(imageURL);
-                        // });
 
                         let problem = {};
                         problem.url = problemUrl;
                         problem.name = name;
-                        // problem.grade = grade;
-                        // problem.rating = rating;
-                        // problem.description = description;
-                        // problem.coordinate = coordinate;
-                        // problem.mapsLink = mapsLink;
-                        // problems.landing = landing;
-                        // problems.sitStart = sitStart;
-                        // problem.images = images;
 
                         problems.push(problem);
                     });
